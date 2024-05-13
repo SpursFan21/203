@@ -19,3 +19,6 @@ def login():
             flash('You were successfully logged in')
             return redirect(url_for('index'))
     return render_template('login.jinja', error=error)
+
+if __name__ == "__main__":
+    app.run(debug=True)
