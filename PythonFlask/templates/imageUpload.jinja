@@ -10,7 +10,7 @@
         <input type="submit">
     </form>
 
-    <!-- Add a link to display the uploaded image -->
+ 
     {% if filename %}
     <img src="{{ url_for('display', filename=filename) }}" alt="Uploaded Image">
     {% endif %}
