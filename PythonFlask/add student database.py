@@ -5,7 +5,7 @@ def add_student():
     lastName = input("Enter the last name of the student: ")
     dob = input("Enter the date of birth of the student (YYYY-MM-DD): ")
 
-    conn = sqlite3.connect('your_database_name.db')
+    conn = sqlite3.connect('Database.db')
     cursor = conn.cursor()
     
     try:
