@@ -20,7 +20,7 @@ def uploader():
         f = request.files["file"]
         filename = secure_filename(f.filename)
         f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return redirect(url_for('uploaded_file', filename=secure_filename(filename)))
+        return redirect(url_for('uploaded_file', filename=filename))
 
 @app.route('/PythonFlask/static/Image/<filename>')
 def uploaded_file(filename):
@@ -30,3 +30,4 @@ def uploaded_file(filename):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
