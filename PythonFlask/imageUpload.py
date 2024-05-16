@@ -21,6 +21,8 @@ def uploader():
         filename = secure_filename(f.filename)
         f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         return redirect(url_for('uploaded_file', filename=filename))
+    else:
+        return render_template("imageUpload.jinja")
 
 @app.route('/PythonFlask/static/Image/<filename>')
 def uploaded_file(filename):
@@ -28,7 +30,6 @@ def uploaded_file(filename):
     print("File Path:", file_path)  # Print out the file path for debugging
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
-
-
 if __name__ == "__main__":
     app.run(debug=True)
+
