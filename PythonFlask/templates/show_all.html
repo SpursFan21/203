@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Students</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>All Students</h2>
+    <ul>
+        {% for student in students %}
+            <li>
+                <strong>ID:</strong> {{ student.idNumber }}<br>
+                <strong>Name:</strong> {{ student.firstName }} {{ student.lastName }}<br>
+                <strong>Address:</strong> {{ student.address }}<br>
+                <strong>City:</strong> {{ student.city }}
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{{ url_for('new') }}">Add New Student</a>
+</body>
+</html>
