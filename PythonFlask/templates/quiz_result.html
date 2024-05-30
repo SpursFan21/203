@@ -2,9 +2,15 @@
 <html>
 <head>
     <title>Quiz Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/quiz.css') }}">
 </head>
 <body>
-    <h1>Your Score: {{ score }} out of {{ total }}</h1>
-    <a href="/">Try Again</a>
+    <div class="container">
+        <h1>Quiz Results</h1>
+        <div class="result">
+            <p>Your Score: {{ score }} out of {{ total }}</p>
+            <a href="/">Try Again</a>
+        </div>
+    </div>
 </body>
 </html>
